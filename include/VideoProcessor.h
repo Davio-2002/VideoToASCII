@@ -1,20 +1,22 @@
 #ifndef VIDEOPROCESOR_H
 #define VIDEOPROCESOR_H
 
+
+// Third party headers
 #include <opencv2/opencv.hpp>
 
-/// No need to write template like this, but I am just experimenting with language, don't blame )
-template <class MetricTypes>
-using Resolution = MetricTypes;
+// Local headers
+#include <Aliases.h>
+
+// STL
+
 
 class VideoProcessor final{
 public:
-    using Path = std::string_view;
-
-    explicit VideoProcessor(Path videoFilePath, Resolution<int> width, Resolution<int> height);
+    explicit VideoProcessor(Path<StrView> videoFilePath, Resolution<int> width, Resolution<int> height);
 
     //// Video Processing
-    bool openVideo(Path videoFilePath);
+    bool openVideo(Path<StrView> videoFilePath);
 
     bool readNextFrame(cv::Mat& frame);
 
