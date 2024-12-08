@@ -1,6 +1,7 @@
 #ifndef PIXELTOASCIICONVERTER_H
 #define PIXELTOASCIICONVERTER_H
 
+// Third party libraries
 #include <opencv2/opencv.hpp>
 
 class PixelToAsciiConverter {

@@ -1,7 +1,6 @@
 #ifndef VIDEOPROCESOR_H
 #define VIDEOPROCESOR_H
 
-
 // Third party headers
 #include <opencv2/opencv.hpp>
 
@@ -13,10 +12,10 @@
 
 class VideoProcessor final{
 public:
-    explicit VideoProcessor(Path<StrView> videoFilePath, Resolution<int> width, Resolution<int> height);
+    explicit VideoProcessor(FilePaths::StrView videoFilePath, Resolution<int> width, Resolution<int> height);
 
     //// Video Processing
-    bool openVideo(Path<StrView> videoFilePath);
+    bool openVideo(FilePaths::StrView videoFilePath);
 
     bool readNextFrame(cv::Mat& frame);
 

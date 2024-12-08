@@ -7,6 +7,7 @@
 // local headers
 #include <Aliases.h>
 #include <PixelToAsciiConverter.h>
+
 // STL
 #include <memory>
 
