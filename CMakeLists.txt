@@ -11,8 +11,8 @@ include_directories( include )
 
 add_executable(VideoToASCII main.cpp
         src/PixelToAsciiConverter.cpp
-        include/PixelToAsciiConverter.h
         src/VideoProcessor.cpp
-        include/VideoProcessor.h)
+        src/FrameProcessor.cpp
+        include/Aliases.h)
 
 target_link_libraries(VideoToASCII ${OpenCV_LIBS})
