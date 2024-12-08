@@ -7,12 +7,12 @@ find_package(OpenCV REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-include_directories(headers)
+include_directories(${headers} src)
 
 add_executable(VideoToASCII
 
         main.cpp
-        FrameProcessor.cpp
+        src/FrameProcessor.cpp
         headers/FrameProcessor.h
         headers/UniversalAsciiConverter.h
         headers/UniversalReader.h
