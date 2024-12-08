@@ -13,6 +13,10 @@ add_executable(VideoToASCII main.cpp
         src/PixelToAsciiConverter.cpp
         src/VideoProcessor.cpp
         src/FrameProcessor.cpp
-        src/AsciiRenderer.cpp)
+        include/Aliases.h
+        include/AsciiRenderer.h
+        src/AsciiRenderer.cpp
+        src/VideoToAsciiArtConverter.cpp
+        include/VideoToAsciiArtConverter.h)
 
 target_link_libraries(VideoToASCII ${OpenCV_LIBS})
