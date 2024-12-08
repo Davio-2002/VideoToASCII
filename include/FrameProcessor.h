@@ -15,6 +15,8 @@ class FrameProcessor {
 public:
     explicit FrameProcessor(ResolutionAlias<int>, ResolutionAlias<int>, const PixelToAsciiConverterPtr&);
 
+    CommonStringAliases::String processFrame(const cv::Mat&) const;
+
 private:
     ResolutionAlias<int> width{};
     ResolutionAlias<int> height{};
