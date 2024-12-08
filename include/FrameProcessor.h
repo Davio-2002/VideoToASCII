@@ -1,21 +1,23 @@
 #ifndef FRAMEPROCESSOR_H
 #define FRAMEPROCESSOR_H
 
-// Third party
-#include <opencv2/opencv.hpp>
 
 // local headers
 #include <Aliases.h>
-#include <PixelToAsciiConverter.h>
+
+// Third party
+#include <opencv2/opencv.hpp>
 
 // STL
 #include <memory>
 
 class FrameProcessor {
+public:
+    explicit FrameProcessor(ResolutionAlias<int>, ResolutionAlias<int>, const PixelToAsciiConverterPtr&);
 
 private:
-    Resolution<int> width{};
-    Resolution<int> height{};
+    ResolutionAlias<int> width{};
+    ResolutionAlias<int> height{};
 
     PixelToAsciiConverterPtr pixelToAsciiConverter;
 };

@@ -1,16 +1,19 @@
 #ifndef PIXELTOASCIICONVERTER_H
 #define PIXELTOASCIICONVERTER_H
 
+// Local headers
+#include <Aliases.h>
+
 // Third party libraries
 #include <opencv2/opencv.hpp>
 
-class PixelToAsciiConverter {
+class PixelToAsciiConverter final {
 public:
     using PixelIntensity = int;
 
-    explicit PixelToAsciiConverter(std::string_view asciiChars);
+    explicit PixelToAsciiConverter( CommonStringAliases::StringView asciiChars);
 
-    static cv::String convert(const PixelIntensity &);
+    AsciiArtAliases::String convert(const PixelIntensity &);
 
     ~PixelToAsciiConverter() = default;
 

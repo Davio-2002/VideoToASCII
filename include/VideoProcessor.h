@@ -1,41 +1,41 @@
 #ifndef VIDEOPROCESOR_H
 #define VIDEOPROCESOR_H
 
-// Third party headers
-#include <opencv2/opencv.hpp>
-
 // Local headers
 #include <Aliases.h>
+
+// Third party headers
+#include <opencv2/opencv.hpp>
 
 // STL
 
 
 class VideoProcessor final{
 public:
-    explicit VideoProcessor(FilePaths::StrView videoFilePath, Resolution<int> width, Resolution<int> height);
+    explicit VideoProcessor(FilePathsAliases::StringView videoFilePath, ResolutionAlias<int> width, ResolutionAlias<int> height);
 
     //// Video Processing
-    bool openVideo(FilePaths::StrView videoFilePath);
+    bool openVideo(FilePathsAliases::StringView videoFilePath);
 
     bool readNextFrame(cv::Mat& frame);
 
 public:
     //// Getters and Setters
-    Resolution<double> getFps_() const { return fps_; }
-    Resolution<int> getWidth() const { return width; }
-    Resolution<int> getHeight_() const { return height_; }
+    ResolutionAlias<double> getFps_() const { return fps_; }
+    ResolutionAlias<int> getWidth() const { return width; }
+    ResolutionAlias<int> getHeight_() const { return height_; }
 
 private:
     //// Members
     cv::VideoCapture cap;
 
-    Resolution<int> width{};
-    Resolution<int> height_{};
+    ResolutionAlias<int> width{};
+    ResolutionAlias<int> height_{};
 
     double fps_{};
 
-    Resolution<double> frameWidth_{};
-    Resolution<double> frameHeight_{};
+    ResolutionAlias<double> frameWidth_{};
+    ResolutionAlias<double> frameHeight_{};
 };
 
 

@@ -3,8 +3,11 @@
 
 #include <Aliases.h>
 
+// STL
+#include <iostream>
+
 struct AsciiRenderer final {
-    static void render(AsciiArt::StrView );
+    static void render(AsciiArtAliases::StringView );
 };
 
 #endif //ASCIIRENDERER_H
