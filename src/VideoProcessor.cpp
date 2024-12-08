@@ -1,11 +1,11 @@
 #include <VideoProcessor.h>
-#include <Aliases.h>
 
-VideoProcessor::VideoProcessor(FilePaths::StrView videoFilePath, Resolution<int> width, Resolution<int> height) {
+VideoProcessor::VideoProcessor(FilePathsAliases::StringView videoFilePath, ResolutionAlias<int> width, ResolutionAlias<int> height) {
 
 }
 
-bool VideoProcessor::openVideo(FilePaths::StrView videoFilePath) {
+bool VideoProcessor::openVideo(FilePathsAliases::StringView videoFilePath) {
+
 }
 
 bool VideoProcessor::readNextFrame(cv::Mat &frame) {

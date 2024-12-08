@@ -1,4 +1,3 @@
-
 #include <AsciiRenderer.h>
 
 namespace {
@@ -7,7 +6,7 @@ namespace {
     }
 }
 
-void AsciiRenderer::render(AsciiArt::StrView) {
+void AsciiRenderer::render(AsciiArtAliases::StringView) {
     clearConsole();
     std::cout.flush();
 }
