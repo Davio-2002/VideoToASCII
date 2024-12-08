@@ -12,10 +12,10 @@
 
 class VideoProcessor final{
 public:
-    explicit VideoProcessor(FilePathsAliases::StringView videoFilePath, ResolutionAlias<int> width, ResolutionAlias<int> height);
+    VideoProcessor(const FilePathsAliases::String &videoFilePath, ResolutionAlias<int> width, ResolutionAlias<int> height);
 
     //// Video Processing
-    bool openVideo(const FilePathsAliases::String &videoFilePath);
+    bool openVideo();
 
     bool readNextFrame(cv::Mat& frame);
 
@@ -28,6 +28,7 @@ public:
 private:
     //// Members
     cv::VideoCapture cap;
+    FilePathsAliases::String videoFilePath_;
 
     ResolutionAlias<int> width_{};
     ResolutionAlias<int> height_{};

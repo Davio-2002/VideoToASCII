@@ -1,7 +1,6 @@
 #ifndef FRAMEPROCESSOR_H
 #define FRAMEPROCESSOR_H
 
-
 // local headers
 #include <Aliases.h>
 
@@ -13,15 +12,15 @@
 
 class FrameProcessor {
 public:
-    explicit FrameProcessor(ResolutionAlias<int>, ResolutionAlias<int>, const PixelToAsciiConverterPtr&);
+    explicit FrameProcessor(ResolutionAlias<int>, ResolutionAlias<int>, const PixelToAsciiConverterPtr &);
 
     CommonStringAliases::String processFrame(const cv::Mat&) const;
 
 private:
-    ResolutionAlias<int> width{};
-    ResolutionAlias<int> height{};
+    ResolutionAlias<int> width_{};
+    ResolutionAlias<int> height_{};
 
-    PixelToAsciiConverterPtr pixelToAsciiConverter;
+    PixelToAsciiConverterPtr pixelToAsciiConverter_;
 };
 
 #endif

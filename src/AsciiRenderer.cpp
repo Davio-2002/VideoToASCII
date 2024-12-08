@@ -6,7 +6,7 @@ namespace {
     }
 }
 
-void AsciiRenderer::render(AsciiArtAliases::StringView) {
+void AsciiRenderer::render(AsciiArtAliases::StringView asciiFrames) {
     clearConsole();
-    std::cout.flush();
+    std::cout << asciiFrames;
 }

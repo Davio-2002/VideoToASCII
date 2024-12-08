@@ -8,20 +8,20 @@
 #include <chrono>
 
 namespace {
-    const std::string ASCII_CHARS = "   ._-=+*!&#%$@o>{}";
+    const std::string ASCII_CHARS = " ._-=+*!&#%$@o>{}";
 }
 
-VideoToAsciiArtConverter::VideoToAsciiArtConverter(const FilePathsAliases::StringView videoFilePath,
+VideoToAsciiArtConverter::VideoToAsciiArtConverter(const FilePathsAliases::String &videoFilePath,
                                                    ResolutionAlias<int> width,
                                                    ResolutionAlias<int> height)
     : vProcessor_{videoFilePath, width, height}
-      , fProcessor_{width, height, pixelToAsciiConverter_}
       , pixelToAsciiConverter_{std::make_shared<PixelToAsciiConverter>(ASCII_CHARS)}
+      , fProcessor_{width, height, pixelToAsciiConverter_}
 {
 }
 
 void VideoToAsciiArtConverter::start() {
-    if (!vProcessor_.openVideo("testing")) {
+    if (!vProcessor_.openVideo()) {
         std::cerr << "Failed to open video" << std::endl;
         return;
     }

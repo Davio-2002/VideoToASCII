@@ -12,15 +12,15 @@
 
 class VideoToAsciiArtConverter final {
 public:
-    explicit VideoToAsciiArtConverter( const FilePathsAliases::StringView, ResolutionAlias<int> width, ResolutionAlias<int> height );
+    explicit VideoToAsciiArtConverter( const FilePathsAliases::String &, ResolutionAlias<int> width, ResolutionAlias<int> height );
 
     void start();
 
 private:
     VideoProcessor vProcessor_;
+    PixelToAsciiConverterPtr pixelToAsciiConverter_;
     FrameProcessor fProcessor_;
     AsciiRenderer renderer_;
-    PixelToAsciiConverterPtr pixelToAsciiConverter_;
 };
 
 
