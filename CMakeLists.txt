@@ -7,15 +7,12 @@ find_package(OpenCV REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-include_directories(${headers} src)
+include_directories( include )
 
-add_executable(VideoToASCII
-
-        main.cpp
-        src/FrameProcessor.cpp
-        headers/FrameProcessor.h
-        headers/UniversalAsciiConverter.h
-        headers/UniversalReader.h
-)
+add_executable(VideoToASCII main.cpp
+        src/PixelToAsciiConverter.cpp
+        include/PixelToAsciiConverter.h
+        src/VideoProcessor.cpp
+        include/VideoProcessor.h)
 
 target_link_libraries(VideoToASCII ${OpenCV_LIBS})
