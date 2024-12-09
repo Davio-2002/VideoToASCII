@@ -7,9 +7,6 @@
 #include <VideoProcessor.h>
 #include <AsciiRenderer.h>
 
-// Third party headers
-#include <opencv2/opencv.hpp>
-
 class VideoToAsciiArtConverter final {
 public:
     explicit VideoToAsciiArtConverter( const FilePathsAliases::String &, ResolutionAlias<int> width, ResolutionAlias<int> height );
